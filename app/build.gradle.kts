@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("kotlin-kapt")
 }
 
 android {
@@ -42,7 +43,14 @@ android {
 }
 
 dependencies {
-    implementation("mysql:mysql-connector-java:8.0.33")
+    implementation(libs.androidx.navigation.compose)
+    val room_version = "2.6.1"
+    implementation("androidx.room:room-runtime:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+    kapt("androidx.room:room-compiler:$room_version")
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.0")
+    implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

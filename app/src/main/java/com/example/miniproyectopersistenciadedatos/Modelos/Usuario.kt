@@ -1,4 +1,11 @@
-package com.example.miniproyectopersistenciadedatos.Modelos
+package com.example.miniproyectopersistenciadedatos.data
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-class Usuario {
-}
+@Entity(tableName = "usuarios")
+data class Usuario(
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    val nombre: String,
+    val email: String,
+    val contrasena: String
+)

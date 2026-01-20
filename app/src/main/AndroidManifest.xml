@@ -15,22 +15,13 @@
         android:theme="@style/Theme.MiniProyectoPersistenciaDeDatos">
 
         <activity
-            android:name=".Pantallas.Iniciar_Sesion"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.MiniProyectoPersistenciaDeDatos">
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".Pantallas.Crear_Usuario"
-            android:exported="false"
-            android:parentActivityName=".Pantallas.Iniciar_Sesion"
-            android:label="Detalle"
-            android:theme="@style/Theme.MiniProyectoPersistenciaDeDatos" />
 
     </application>
 
