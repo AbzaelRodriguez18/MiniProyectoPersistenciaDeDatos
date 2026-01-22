@@ -5,16 +5,16 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.miniproyectopersistenciadedatos.data.Usuario
 import com.example.miniproyectopersistenciadedatos.data.UsuarioDao
-import com.example.miniproyectopersistenciadedatos.data.SettingsManager
+import com.example.miniproyectopersistenciadedatos.data.ManejadorDeAjustes
 import kotlinx.coroutines.launch
 
-class AppViewModel(private val dao: UsuarioDao, private val settings: SettingsManager) : ViewModel() {
+class AppViewModel(private val dao: UsuarioDao, private val settings: ManejadorDeAjustes) : ViewModel() {
 
     var nombre by mutableStateOf("")
     var email by mutableStateOf("")
     var pass by mutableStateOf("")
 
-    val darkTheme = settings.isDarkMode
+    val darkTheme = settings.ModoOscuro
     val idioma = settings.idioma
 
     var mensajeError by mutableStateOf("")
