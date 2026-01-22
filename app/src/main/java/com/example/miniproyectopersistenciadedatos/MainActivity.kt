@@ -16,7 +16,7 @@ import com.example.miniproyectopersistenciadedatos.Pantallas.Pantalla1
 import com.example.miniproyectopersistenciadedatos.Pantallas.PantallaCrear
 import com.example.miniproyectopersistenciadedatos.Pantallas.PantallaLogin
 import com.example.miniproyectopersistenciadedatos.data.AppDatabase
-import com.example.miniproyectopersistenciadedatos.data.SettingsManager
+import com.example.miniproyectopersistenciadedatos.data.ManejadorDeAjustes
 import com.example.miniproyectopersistenciadedatos.ui.theme.MiniProyectoPersistenciaDeDatosTheme
 import com.example.miniproyectopersistenciadedatos.viewmodel.AppViewModel
 
@@ -25,16 +25,16 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         val db = AppDatabase.getDatabase(applicationContext)
-        val sm = SettingsManager(applicationContext)
+        val sm = ManejadorDeAjustes(applicationContext)
         val vm = AppViewModel(db.usuarioDao(), sm)
 
         enableEdgeToEdge()
 
         setContent {
-            val isDark by vm.darkTheme.collectAsState(initial = false)
+            val oscuro by vm.darkTheme.collectAsState(initial = false)
             val navController = rememberNavController()
 
-            MiniProyectoPersistenciaDeDatosTheme(darkTheme = isDark) {
+            MiniProyectoPersistenciaDeDatosTheme(darkTheme = oscuro) {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
