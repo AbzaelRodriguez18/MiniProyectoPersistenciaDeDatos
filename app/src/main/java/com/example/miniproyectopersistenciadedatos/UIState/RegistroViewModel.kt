@@ -19,7 +19,6 @@ class RegistroViewModel : androidx.lifecycle.ViewModel() {
     fun onContrasenaChanged(newValue: String) { uiState = uiState.copy(contrasena = newValue) }
 
     fun registrarUsuario() {
-        // Aquí conectarás con ROOM más adelante
         println("Usuario registrado: ${uiState.nombre}")
     }
 }

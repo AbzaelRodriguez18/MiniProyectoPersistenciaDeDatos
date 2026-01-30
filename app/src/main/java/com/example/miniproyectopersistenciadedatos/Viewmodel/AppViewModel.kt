@@ -28,8 +28,6 @@ class AppViewModel(private val dao: UsuarioDao, private val settings: ManejadorD
 
     fun intentarLogin(onLoginSuccess: () -> Unit) {
         viewModelScope.launch {
-            // Primero buscamos si el correo existe (necesitamos un nuevo método en el DAO o filtrar aquí)
-            // Por simplicidad, buscaremos el usuario por email
             val usuarioEncontrado = dao.obtenerUsuarioPorEmail(email)
 
             when {
@@ -40,7 +38,7 @@ class AppViewModel(private val dao: UsuarioDao, private val settings: ManejadorD
                     mensajeError = "Contraseña incorrecta"
                 }
                 else -> {
-                    mensajeError = "" // Limpiar errores
+                    mensajeError = ""
                     onLoginSuccess()
                 }
             }
