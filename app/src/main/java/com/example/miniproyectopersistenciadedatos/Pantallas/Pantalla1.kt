@@ -10,7 +10,6 @@ import com.example.miniproyectopersistenciadedatos.viewmodel.AppViewModel
 
 @Composable
 fun Pantalla1(viewModel: AppViewModel) {
-    // Observamos los cambios de DataStore
     val isDark by viewModel.darkTheme.collectAsState(initial = false)
     val idiomaActual by viewModel.idioma.collectAsState(initial = "Español")
 

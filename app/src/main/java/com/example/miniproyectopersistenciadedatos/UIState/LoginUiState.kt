@@ -18,7 +18,6 @@ class LoginViewModel : androidx.lifecycle.ViewModel() {
     fun onContrasenaChanged(newValue: String) { uiState = uiState.copy(contrasena = newValue) }
 
     fun login() {
-        // Aquí validarás con los datos de ROOM
         println("Login con: ${uiState.email}")
     }
 }
